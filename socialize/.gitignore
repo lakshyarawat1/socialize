@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+pyvenv.cfg
+Include
+Lib
+Scripts
+/socialize/manage.py
+/socialize/db.sqlite3
+/socialize/socialize/__pycache__
