@@ -6,3 +6,4 @@ Scripts
 /socialize/manage.py
 /socialize/db.sqlite3
 /socialize/socialize/__pycache__
+core/__pycache__
