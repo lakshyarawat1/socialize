@@ -8,7 +8,7 @@ class Profile(models.Model):
     id_user = models.IntegerField()
     bio = models.TextField(blank=True)
     profileImg = models.ImageField(upload_to='profile-images', default='blank-profile-picture.png')
-    location = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True, null=True)
     
     def __str__(self) :
         return self.user.username

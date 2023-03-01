@@ -42,13 +42,13 @@
                         <p></p>
                     </div>
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
-                        <form action='' method='post' >
+                        <form action='' method='post' enctype='multipart/form-data'>
                             {% csrf_token %}
                             <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                                 <div class="col-span-2">
                                     <label for=""> Profile Image</label>
                                     <img src='{{ user_profile.profileImg.url }}' height="200px" width="200px">
-                                    <input type="file" name='profileImg' value='' placeholder="" class="shadow-none bg-gray-100">
+                                    <input type="file" name='profileImg' class="shadow-none bg-gray-100">
                                 </div>
                                 <div class="col-span-2">
                                     <label for="about">Bio</label>  
