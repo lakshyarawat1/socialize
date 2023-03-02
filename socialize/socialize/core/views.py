@@ -65,7 +65,7 @@ def logout(request) :
     auth.logout(request)
     return redirect('login')
 
-@login_required(login_url='signin')
+@login_required(login_url='login')
 def settings(request) :
         user_profile = Profile.objects.get(user=request.user)
         
@@ -92,7 +92,8 @@ def settings(request) :
             return redirect('settings')
         else :
             return render(request, 'setting.html', { 'user_profile': user_profile })
-        
+      
+@login_required(login_url='login')       
 def upload(request) :
     if request.method == 'POST' :
         user = request.user.username
