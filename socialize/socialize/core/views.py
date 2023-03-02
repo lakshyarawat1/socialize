@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Profile, Post
+from .models import Profile, Post, LikePost
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
@@ -97,6 +97,7 @@ def settings(request) :
       
 @login_required(login_url='login')       
 def upload(request) :
+    
     if request.method == 'POST' :
         user = request.user.username
         image = request.FILES.get('image_upload')
@@ -108,3 +109,7 @@ def upload(request) :
         return redirect('/')
     else:
         return redirect('/')
+    
+@login_required(login_url='login')
+def like(request) :
+    return HttpResponse('working')
