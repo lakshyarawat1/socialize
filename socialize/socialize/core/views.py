@@ -130,3 +130,9 @@ def like(request) :
         post.no_of_likes = post.no_of_likes-1
         post.save()
         return redirect('/')
+    
+@login_required(login_url='/login')
+def profile(request, pk):
+    user_object = User.objects.get(username=pk)
+    
+    return render(request, 'profile.html')
